@@ -114,21 +114,6 @@ func do() (err error) {
 	return
 }
 
-// getEnv returns the last instance of an environment variable.
-func getEnv(env []string, key string) string {
-	for i := len(env) - 1; i >= 0; i-- {
-		v := env[i]
-		kv := strings.SplitN(v, "=", 2)
-		if kv[0] == key {
-			if len(kv) > 1 {
-				return kv[1]
-			}
-			return ""
-		}
-	}
-	return ""
-}
-
 // Exists simply checks if a path exists and panics on error
 func Exists(path string) bool {
 	_, err := os.Stat(path)
