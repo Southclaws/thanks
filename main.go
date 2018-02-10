@@ -104,7 +104,8 @@ func do() (err error) {
 		// }
 
 		// At this point I realised the Go community doesn't really do donations...
-		// But at least
+		// But at least you can see all the repos you depend on!
+		// And maybe go see if they take donations or are a part of open collective etc
 
 		fmt.Println("-", fmt.Sprintf("https://%s", pkg))
 	}
