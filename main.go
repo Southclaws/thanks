@@ -119,7 +119,12 @@ func do() (err error) {
 		table.Append([]string{pkg, donationLink})
 	}
 
-	table.Render()
+	if table.NumLines() > 0 {
+		table.Render()
+	} else {
+		fmt.Println("None of your dependencies appear to be taking donations.")
+		fmt.Println("But if you're feeling generous, there's no harm in asking!")
+	}
 
 	return
 }
