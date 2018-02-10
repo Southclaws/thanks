@@ -69,7 +69,7 @@ func do() (err error) {
 			// build the root import path, assuming domain.user.repo format
 			rootImportPath := fmt.Sprintf("%s/%s/%s", components[0], components[1], components[2])
 			// skip self
-			if strings.Contains(cwd, rootImportPath) {
+			if t.ImportRoot == rootImportPath {
 				continue
 			}
 			pkgs[rootImportPath] = struct{}{}
@@ -85,7 +85,7 @@ func do() (err error) {
 	// We now have a sorted list of repositories we depend on!
 	// Go searching for readmes etc
 
-	vendor := filepath.Join(cwd, "vendor")
+	vendor := filepath.Join(p.AbsRoot, "vendor")
 	if !Exists(vendor) {
 		return errors.New("No vendor directory found, cannot search packages :(")
 	}
