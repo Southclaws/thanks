@@ -19,8 +19,6 @@ You depend on:
 Go buy em a beer!
 ```
 
-## Footnotes
+## Adding Your Donation Link
 
-I never figured out exactly how feross was grabbing patreon/OC links for the "where to donate" - I looked on quite a few Go packages and noticed that none of them even took donations, only the larger projects that were using GitCoin, OpenCollective, Linux Foundation, etc.
-
-PR's welcome though!
+Submit a PR to the `lists.go` page, add your Go package import path followed by whatever donation page you use (Patreon, OpenCollective, etc.)

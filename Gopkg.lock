@@ -52,10 +52,22 @@
   version = "v0.3.0"
 
 [[projects]]
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  revision = "9e777a8366cce605130a531d2cd6363d07ad7317"
+  version = "v0.0.2"
+
+[[projects]]
   branch = "master"
   name = "github.com/nightlyone/lockfile"
   packages = ["."]
   revision = "6a197d5ea61168f2ac821de2b7f011b250904900"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/olekukonko/tablewriter"
+  packages = ["."]
+  revision = "b8a9be070da40449e501c3c4730a889e42d87a9e"
 
 [[projects]]
   name = "github.com/pelletier/go-toml"
@@ -96,6 +108,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "983964711e21790e56b8eecc0e3249a8b4589e1e217a64f479383af52317619d"
+  inputs-digest = "701c309b26a8fe8e3f4bdc24c636fa9f9ab8dece25b625039b0f21954c790722"
   solver-name = "gps-cdcl"
   solver-version = 1

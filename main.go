@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/golang/dep"
+	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
 )
 
@@ -96,7 +97,11 @@ func do() (err error) {
 
 	fmt.Println("You depend on:")
 
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"Package", "Where to Donate"})
+
 	for _, pkg := range sorted {
+		// Possible future feature: open up each readme and search for patreon/etc links
 		// pkgPath := filepath.Join(vendor, pkg)
 		// if !Exists(pkgPath) {
 		// 	fmt.Println("No local copy of", pkg, "found in vendor/")
@@ -107,10 +112,14 @@ func do() (err error) {
 		// But at least you can see all the repos you depend on!
 		// And maybe go see if they take donations or are a part of open collective etc
 
-		fmt.Println("-", fmt.Sprintf("https://%s", pkg))
+		donationLink, ok := PackagesTakingForDonations[pkg]
+		if !ok {
+			continue
+		}
+		table.Append([]string{pkg, donationLink})
 	}
 
-	fmt.Println("Go buy em a beer!")
+	table.Render()
 
 	return
 }
