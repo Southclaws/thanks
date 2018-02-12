@@ -7,4 +7,5 @@ var PackagesTakingForDonations = map[string]string{
 	"github.com/kataras/iris":          "https://opencollective.com/iris/donate",
 	"github.com/fabiolb/fabio":         "https://opencollective.com/fabio/donate",
 	"github.com/gocolly/colly":         "https://opencollective.com/colly/donate",
+	"github.com/mholt/caddy":           "https://caddyserver.com/sponsor",
 }
